@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1773420035
+::res://::1773468913
 ::res://assets/::1773417788
 ::res://assets/plants/::1773418368
 peashooter.png::CompressedTexture2D::2383117261339799779::1773417371::1773418368::1::::<><><>0<>0<>8d7270539ff115f43f16f47e1d034655<>res://.godot/imported/peashooter.png-05d8d6c8f7cfcf319c98da0dd917e2cc.ctex::
@@ -14,7 +14,7 @@ tank_zombie.png::CompressedTexture2D::3752366469188854243::1773417764::177341836
 BasicZombie.tscn::PackedScene::2096946475853616::1773417921::0::1::::<><><>0<>0<><>::res://scripts/BasicZombie.gd
 FastZombie.tscn::PackedScene::304560890514544::1773417923::0::1::::<><><>0<>0<><>::res://scripts/FastZombie.gd
 GameOver.tscn::PackedScene::12407928732067000::1773411370::0::1::::<><><>0<>0<><>::res://scripts/GameOver.gd
-GameScene.tscn::PackedScene::364939237069208::1773418037::0::1::::<><><>0<>0<><>::res://scripts/GameScene.gd<>res://scripts/Grid.gd<>res://scripts/WaveSpawner.gd<>res://scripts/UIManager.gd
+GameScene.tscn::PackedScene::364939237069208::1773420224::0::1::::<><><>0<>0<><>::res://scripts/GameScene.gd<>res://scripts/Grid.gd<>res://scripts/WaveSpawner.gd<>res://scripts/UIManager.gd
 MainMenu.tscn::PackedScene::24787520941091264::1773411553::0::1::::<><><>0<>0<><>::res://scripts/MainMenu.gd
 PeaProjectile.tscn::PackedScene::917922030677208::1773411456::0::1::::<><><>0<>0<><>::res://scripts/PeaProjectile.gd
 PeaShooter.tscn::PackedScene::31209491171477192::1773417839::0::1::::<><><>0<>0<><>::res://scripts/PeaShooter.gd
