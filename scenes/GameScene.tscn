@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=3 uid="uid://gamescn001"]
+
+[ext_resource type="Script" path="res://scripts/GameScene.gd" id="1_gs"]
+[ext_resource type="Script" path="res://scripts/Grid.gd" id="2_grid"]
+[ext_resource type="Script" path="res://scripts/WaveSpawner.gd" id="3_wave"]
+[ext_resource type="Script" path="res://scripts/UIManager.gd" id="4_ui"]
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_gs")
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.13, 0.38, 0.08, 1)
+
+[node name="LawnStripes" type="Node2D" parent="."]
+
+[node name="Stripe0" type="ColorRect" parent="LawnStripes"]
+position = Vector2(120, 80)
+size = Vector2(972, 108)
+mouse_filter = 2
+color = Color(0.24, 0.55, 0.12, 1)
+
+[node name="Stripe1" type="ColorRect" parent="LawnStripes"]
+position = Vector2(120, 188)
+size = Vector2(972, 108)
+mouse_filter = 2
+color = Color(0.13, 0.38, 0.08, 1)
+
+[node name="Stripe2" type="ColorRect" parent="LawnStripes"]
+position = Vector2(120, 296)
+size = Vector2(972, 108)
+mouse_filter = 2
+color = Color(0.16, 0.44, 0.1, 1)
+
+[node name="Stripe3" type="ColorRect" parent="LawnStripes"]
+position = Vector2(120, 404)
+size = Vector2(972, 108)
+mouse_filter = 2
+color = Color(0.13, 0.38, 0.08, 1)
+
+[node name="Stripe4" type="ColorRect" parent="LawnStripes"]
+position = Vector2(120, 512)
+size = Vector2(972, 108)
+mouse_filter = 2
+color = Color(0.16, 0.44, 0.1, 1)
+
+[node name="House" type="ColorRect" parent="."]
+position = Vector2(0, 80)
+size = Vector2(120, 540)
+mouse_filter = 2
+color = Color(0.55, 0.35, 0.15, 1)
+
+[node name="HouseLabel" type="Label" parent="."]
+position = Vector2(5, 300)
+size = Vector2(110, 120)
+text = "🏠
+HOME"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 28
+
+[node name="Grid" type="Node2D" parent="."]
+script = ExtResource("2_grid")
+
+[node name="ZombieLayer" type="Node2D" parent="."]
+
+[node name="ProjectileLayer" type="Node2D" parent="."]
+
+[node name="SunLayer" type="Node2D" parent="."]
+
+[node name="WaveSpawner" type="Node" parent="."]
+script = ExtResource("3_wave")
+
+[node name="WaveTimer" type="Timer" parent="WaveSpawner"]
+wait_time = 5.0
+one_shot = false
+autostart = false
+
+[node name="SpawnTimer" type="Timer" parent="WaveSpawner"]
+wait_time = 4.0
+one_shot = false
+autostart = false
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("4_ui")
+
+[node name="HUDPanel" type="ColorRect" parent="HUD"]
+anchor_right = 1.0
+size = Vector2(1152, 78)
+color = Color(0.35, 0.22, 0.12, 1)
+
+[node name="Border" type="ColorRect" parent="HUD/HUDPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.25, 0.15, 0.08, 1)
+
+[node name="SunLabel" type="Label" parent="HUD/HUDPanel"]
+position = Vector2(15, 12)
+size = Vector2(120, 54)
+text = "☀ 50"
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(1.0, 1.0, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0.2, 0.1, 0.0, 1)
+theme_override_constants/outline_size = 6
+
+[node name="PlantButtons" type="HBoxContainer" parent="HUD/HUDPanel"]
+position = Vector2(145, 8)
+size = Vector2(560, 62)
+theme_override_constants/separation = 10
+
+[node name="PeaShooterBtn" type="Button" parent="HUD/HUDPanel/PlantButtons"]
+custom_minimum_size = Vector2(160, 62)
+theme_override_colors/font_color = Color(0.1, 0.4, 0.1, 1)
+text = "🌿 PEA 100"
+theme_override_font_sizes/font_size = 18
+
+[node name="SunflowerBtn" type="Button" parent="HUD/HUDPanel/PlantButtons"]
+custom_minimum_size = Vector2(150, 62)
+theme_override_colors/font_color = Color(0.6, 0.4, 0.0, 1)
+text = "🌻 SUN 50"
+theme_override_font_sizes/font_size = 18
+
+[node name="WallNutBtn" type="Button" parent="HUD/HUDPanel/PlantButtons"]
+custom_minimum_size = Vector2(140, 62)
+theme_override_colors/font_color = Color(0.4, 0.2, 0.0, 1)
+text = "🥜 NUT 75"
+theme_override_font_sizes/font_size = 18
+
+[node name="WaveLabel" type="Label" parent="HUD/HUDPanel"]
+position = Vector2(740, 12)
+size = Vector2(160, 54)
+text = "Wave: 0"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.9, 1.0, 0.6, 1)
+
+[node name="ScoreLabel" type="Label" parent="HUD/HUDPanel"]
+position = Vector2(910, 12)
+size = Vector2(230, 54)
+text = "Score: 0"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1.0, 0.85, 0.3, 1)

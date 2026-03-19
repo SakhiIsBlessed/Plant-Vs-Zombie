@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://sunflwr001"]
+
+[ext_resource type="Script" path="res://scripts/Sunflower.gd" id="1_sf"]
+[ext_resource type="Texture2D" uid="uid://sf_tex" path="res://assets/plants/sunflower.png" id="2_sf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf"]
+size = Vector2(72, 72)
+
+[node name="Sunflower" type="Area2D"]
+collision_layer = 1
+collision_mask = 0
+script = ExtResource("1_sf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sf")
+scale = Vector2(0.12, 0.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sf")

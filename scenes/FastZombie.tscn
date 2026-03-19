@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://fastzom001"]
+
+[ext_resource type="Script" path="res://scripts/FastZombie.gd" id="1_fz"]
+[ext_resource type="Texture2D" uid="uid://fz_tex" path="res://assets/zombies/fast_zombie.png" id="2_fz"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fz"]
+size = Vector2(28, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fzatk"]
+size = Vector2(20, 65)
+
+[node name="FastZombie" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_fz")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fz")
+scale = Vector2(0.12, 0.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fz")
+
+[node name="AttackArea" type="Area2D" parent="."]
+position = Vector2(-25, 0)
+collision_layer = 0
+collision_mask = 1
+
+[node name="AttackShape" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("RectangleShape2D_fzatk")
